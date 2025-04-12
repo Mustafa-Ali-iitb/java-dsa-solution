@@ -36,10 +36,9 @@ public class LongestCommonSubsequence {
                     } else {
                         dp[i][j] = Math.max(dp[i-1][j],dp[i][j-1]);
                     }
-                    res = dp[i][j]>res?dp[i][j]:res;
                 }
             }
-            return res;
+            return dp[n][m];
         }
         
     }
