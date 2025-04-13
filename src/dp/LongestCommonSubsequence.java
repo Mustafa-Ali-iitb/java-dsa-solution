@@ -1,12 +1,6 @@
 package dp;
 
 public class LongestCommonSubsequence {
-
-    // Function to find the length of LCS using bottom-up DP
-    public static int lcs(String text1, String text2) {
-        return text1.length();
-    }
-
     public int longestCommonSubsequence(String text1, String text2, String option) {
         int n = text1.length();
         int m = text2.length();
@@ -27,7 +21,6 @@ public class LongestCommonSubsequence {
         }
         else {
             // Tabulation
-            int res = 0;
             int[][] dp = new int[n+1][m+1];
             for(int i = 1; i<=n; i++) {
                 for(int j = 1; j<=m; j++) {
