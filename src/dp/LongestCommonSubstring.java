@@ -32,32 +32,32 @@ public class LongestCommonSubstring {
         return maxLen;
     }
 
-    //Memoization
-    private int memoization(String s1, String s2, int i, int j , int[][] dp) {
-        if(i<0 || j< 0)  return 0;
-        if(dp[i][j] != -1) return dp[i][j];
-        if(s1.charAt(i) == s2.charAt(j)) {
-            dp[i][j] = 1 + memoization(s1,s2,i-1,j-1, dp);
-            maxLen =  Math.max(maxLen, dp[i][j]);
-        } else {
-            dp[i][j] = 0; 
-        }
+    // //Memoization
+    // private int memoization(String s1, String s2, int i, int j , int[][] dp) {
+    //     if(i<0 || j< 0)  return 0;
+    //     if(dp[i][j] != -1) return dp[i][j];
+    //     if(s1.charAt(i) == s2.charAt(j)) {
+    //         dp[i][j] = 1 + memoization(s1,s2,i-1,j-1, dp);
+    //         maxLen =  Math.max(maxLen, dp[i][j]);
+    //     } else {
+    //         dp[i][j] = 0; 
+    //     }
 
-        memoization(s1, s2, i-1, j, dp);
-        memoization(s1, s2, i-1, j-1, dp);
-        return dp[i][j];
-    }
+    //     memoization(s1, s2, i-1, j, dp);
+    //     memoization(s1, s2, i-1, j-1, dp);
+    //     return dp[i][j];
+    // }
 
     
 
-    // Reccurssion
-    private int reccurssion(String s1, String s2, int i, int j , int currLen) {
-        if(i<0 || j<0) return currLen;
-        if(s1.charAt(i) == s2.charAt(j)) {
-            return reccurssion(s1, s2, i-1,j-1, currLen+1);
-        }
-        return Math.max(currLen, Math.max(reccurssion(s1, s2, i,j-1,0), reccurssion(s1, s2, i-1, j, 0)));
-    }
+    //  Reccurssion
+    // private int reccurssion(String s1, String s2, int i, int j , int currLen) {
+    //     if(i<0 || j<0) return currLen;
+    //     if(s1.charAt(i) == s2.charAt(j)) {
+    //         return reccurssion(s1, s2, i-1,j-1, currLen+1);
+    //     }
+    //     return Math.max(currLen, Math.max(reccurssion(s1, s2, i,j-1,0), reccurssion(s1, s2, i-1, j, 0)));
+    // }
 
 
     
