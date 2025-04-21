@@ -28,8 +28,8 @@ public class CoinChange {
         // return dp[coins.length-1][amount];
 
 
-        return recursion(coins, coins.length-1, amount)==100000?-1:recursion(coins, coins.length-1, amount); 
-        // return memoization(coins, coins.length-1, amount, dp)==100000?-1:memoization(coins, coins.length-1, amount, dp); 
+        // return recursion(coins, coins.length-1, amount)==100000?-1:recursion(coins, coins.length-1, amount); 
+        return memoization(coins, coins.length-1, amount, dp)==100000?-1:memoization(coins, coins.length-1, amount, dp); 
     }
 
     // Memoization
