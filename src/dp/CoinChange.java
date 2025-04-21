@@ -75,8 +75,8 @@ public class CoinChange {
 
     public static void main(String[] args) {
         CoinChange cc = new CoinChange();
-        int[] weight = new int[]{4,2,5};
-        int minCount = cc.coinChange(weight, 11);
+        int[] weight = new int[]{25, 10, 5, 2, 1, 50, 100, 20, 40, 60};
+        int minCount = cc.coinChange(weight, 200);
         System.out.println("Min Coins is: " + minCount);
     }
     
