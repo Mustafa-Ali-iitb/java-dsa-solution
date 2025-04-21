@@ -3,33 +3,33 @@ package dp;
 public class CoinChange {
 
     public int coinChange(int[] coins, int amount) {
-        // int[][] dp = new int[coins.length][amount+1];
+        int[][] dp = new int[coins.length][amount+1];
     
-        // for(int a = 0; a <= amount; a++)  {
-        //     if(a%coins[0] == 0) {
-        //         dp[0][a] = a/coins[0];
-        //     } else {
-        //         dp[0][a] = 100000;
-        //     }
-        // }
+        for(int a = 0; a <= amount; a++)  {
+            if(a%coins[0] == 0) {
+                dp[0][a] = a/coins[0];
+            } else {
+                dp[0][a] = 100000;
+            }
+        }
 
-        // for(int idx = 1; idx< coins.length; idx++) {
-        //     for(int a = 0; a<amount+1; a++) {
-        //         int nPick = dp[idx-1][a];
-        //         int pick = 100000;
+        for(int idx = 1; idx< coins.length; idx++) {
+            for(int a = 0; a<amount+1; a++) {
+                int nPick = dp[idx-1][a];
+                int pick = 100000;
                 
-        //         if(coins[idx]<=a) {
-        //             pick = 1 + dp[idx][a-coins[idx]];
-        //         }
-        //         dp[idx][a] = Math.min(nPick, pick);
-        //     }
-        // }
+                if(coins[idx]<=a) {
+                    pick = 1 + dp[idx][a-coins[idx]];
+                }
+                dp[idx][a] = Math.min(nPick, pick);
+            }
+        }
     
-        // return dp[coins.length-1][amount];
+        return dp[coins.length-1][amount];
 
 
         // return recursion(coins, coins.length-1, amount)==100000?-1:recursion(coins, coins.length-1, amount); 
-        return memoization(coins, coins.length-1, amount, dp)==100000?-1:memoization(coins, coins.length-1, amount, dp); 
+        // return memoization(coins, coins.length-1, amount, dp)==100000?-1:memoization(coins, coins.length-1, amount, dp); 
     }
 
     // Memoization
